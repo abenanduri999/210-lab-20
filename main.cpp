@@ -63,29 +63,31 @@ class Chair
 int main() {
 
     cout << fixed << setprecision(2);
-
+    
+    //using the parameter constructor-new one that accepts an int and an array of 3 doubles
+    int l = (rand() % (4 -3 + 1)) + 3;
     double p [SIZE]; 
     for(int j = 0; j < SIZE; j++)
     {
         double cost = (rand() % (MAX - MIN + 1) + MIN)/(double)100;
         p[j] = cost;
     } 
-    Chair * ch = new Chair(3, p); 
+    Chair * ch = new Chair(l, p); 
     ch->print();    
     
 
-  /*  //creating pointer to first chair object
+    /*//creating pointer to first chair object
     Chair *chairPtr = new Chair;
     chairPtr->setLegs(4);
     chairPtr->setPrices(121.21, 232.32, 414.14);
-    chairPtr->print();
+    chairPtr->print();*/
 
-    //creating dynamic chair object with constructor
+    /*//creating dynamic chair object with constructor
     Chair *livingChair = new Chair(3);
     livingChair->setPrices(525.25, 434.34, 252.52);
     livingChair->print();
     delete livingChair;
-    livingChair = nullptr;
+    livingChair = nullptr; */
 
     //creating dynamic array of chair objects
     //use default constructor to populate it-part of assignment
