@@ -4,6 +4,7 @@
 using namespace std;
 
 const int SIZE = 3;
+const int MIN = 10000, MAX = 99999; 
 
 class Chair 
     {
@@ -12,13 +13,16 @@ class Chair
             double * prices;
 
         public:
-            // constructors
+            // constructors- changing the default constructor
             Chair() 
             {
                 prices = new double[SIZE];
-                legs = 0;
+                legs = (rand() % (4 -3 + 1)) + 3;
                 for (int i = 0; i < SIZE; i++)
-                prices[i] = 0;
+                {
+                    double price = (rand() % (MAX - MIN + 1) + MIN)/(double)100;
+                    prices[i] = price;
+                }
             }       
 
             Chair(int l) 
@@ -75,14 +79,19 @@ livingChair = nullptr;
 
 //creating dynamic array of chair objects
 Chair *collection = new Chair[SIZE];
-collection[0].setLegs(4);
+for(int i = 0; i < SIZE; i++)
+{
+    collection[i].print();
+}
+
+/*collection[0].setLegs(4);
 collection[0].setPrices(441.41, 552.52, 663.63);
 collection[1].setLegs(4);
 collection[1].setPrices(484.84, 959.59, 868.68);
 collection[2].setLegs(4);
 collection[2].setPrices(626.26, 515.15, 757.57);
 for (int i = 0; i < SIZE; i++)
-collection[i].print();
+collection[i].print();*/
 return 0;
 
 }
