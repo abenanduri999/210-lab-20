@@ -64,7 +64,17 @@ int main() {
 
     cout << fixed << setprecision(2);
 
-    //creating pointer to first chair object
+    double p [SIZE]; 
+    for(int j = 0; j < SIZE; j++)
+    {
+        double cost = (rand() % (MAX - MIN + 1) + MIN)/(double)100;
+        p[j] = cost;
+    } 
+    Chair * ch = new Chair(3, p); 
+    ch->print();    
+    
+
+  /*  //creating pointer to first chair object
     Chair *chairPtr = new Chair;
     chairPtr->setLegs(4);
     chairPtr->setPrices(121.21, 232.32, 414.14);
